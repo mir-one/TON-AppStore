@@ -1,10 +1,8 @@
 name: traffic2badge
 on:
-  #push:
-    #branches:
-      #- main
-  schedule:
-    - cron: '0 0 * * *' #UTC
+  push:
+    branches:
+      - main
 
 jobs:
   run:
@@ -12,26 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2.3.4
-
-      - name: Get Commit Message
-        id: message
-        uses: actions/github-script@v3.1.0
-        env:
-          FULL_COMMIT_MESSAGE: '${{ github.event.head_commit.message }}'
-        with:
-          result-encoding: string
-          script: |
-            var message = `${process.env.FULL_COMMIT_MESSAGE}`;
-            core.info(message);
-            if (message != '') return message;
-            var time = new Date(Date.now()).toISOString();
-            core.info(time);
-            return `Get traffic data at ${time}`;
+        uses: actions/checkout@v3
 
       - name: Set Traffic
         id: traffic
-        uses: yi-Xu-0100/traffic-to-badge@v1.4.0
+        uses: ./
         with:
           my_token: ${{ secrets.TRAFFIC_TOKEN }}
           #(default) static_list: ${{ github.repository }}
@@ -45,17 +28,17 @@ jobs:
           #(default) total_views_week_color: brightgreen
           #(default) total_clones_week_color: brightgreen
           #(default) logo: github
-          year: 202
+          year: 2019
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3.7.3
+        uses: peaceiris/actions-gh-pages@v3.9.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: ${{ steps.traffic.outputs.traffic_branch }}
           publish_dir: ${{ steps.traffic.outputs.traffic_path }}
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-          full_commit_message: ${{ steps.message.outputs.result }}
+          full_commit_message: ${{ github.event.head_commit.message }}
 
       - name: Show Traffic Data
         run: |
