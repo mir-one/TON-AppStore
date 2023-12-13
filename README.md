@@ -1,15 +1,14 @@
 # 💎 TON AppStore
+
 A TON Appstore containing TON Ecosystem images.
+![main](Assets/main.png)
 
 ## 📃 Table of Contents
-
-![main](Assets/main.png)
 
 [![total views](https://raw.githubusercontent.com/mir-one/TON-AppStore/traffic/total_views.svg)](https://github.com/mir-one/TON-AppStore/tree/traffic#-total-traffic-data-badge)
 [![total views per week](https://raw.githubusercontent.com/mir-one/TON-AppStore/traffic/total_views_per_week.svg)](https://github.com/mir-one/TON-AppStoree/tree/traffic#-total-traffic-data-badge)
 [![total clones](https://raw.githubusercontent.com/mir-one/TON-AppStore/traffic/total_clones.svg)](https://github.com/mir-one/TON-AppStore/tree/traffic#-total-traffic-data-badge)
 [![total clones per week](https://raw.githubusercontent.com/mir-one/TON-AppStore/traffic/total_clones_per_week.svg)](https://github.com/mir-one/TON-AppStore/tree/traffic#-total-traffic-data-badge)
-
 
 - [💎 TON AppStore](#-ton-appstore)
   - [📃 Table of Contents](#-table-of-contents)
@@ -23,8 +22,8 @@ The TON Appstore is **guaranteed to provide you the latest version of every Appl
 
 ## 🛠 List of Applications
 
-| # | Application  | Version | Description |
-| --- | --- | --- | --- |
+| #   | Application | Version | Description |
+| --- | ----------- | ------- | ----------- |
 
 ## Contributing
 
