@@ -1,0 +1,44 @@
+name: watchtower
+services:
+  app:
+    container_name: watchtower
+    image: containrrr/watchtower:latest
+    environment:
+      - TZ=$TZ
+      - WATCHTOWER_LIFECYCLE_HOOKS=True
+      - WATCHTOWER_NOTIFICATIONS=shoutrrr
+      - WATCHTOWER_NOTIFICATION_URL=telegram://BOT_TOKEN@telegram/?channels=CHAT_ID
+      - WATCHTOWER_DEBUG=true
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_SCHEDULE=0 0 11 * * *
+      - WATCHTOWER_MONITOR_ONLY=false
+    volumes:
+      - type: bind
+        source: //var/run/docker.sock
+        target: /var/run/docker.sock
+    restart: unless-stopped
+    network_mode: host
+    privileged: false
+
+x-casaos:
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  author: watchtower
+  category: TONStore
+  description:
+    en_us: A container-based solution for automating Docker container base image updates.
+  developer: watchtower
+  icon: https://raw.githubusercontent.com/mir-one/TON-AppStore/main/Apps/watchtower/icon.png
+  index: /
+  main: app
+  scheme: http
+  tagline:
+    en_us: A container-based solution for automating Docker container base image updates.
+  store_app_id: watchtower
+  title:
+    en_us: Watchtower
+  screenshot_link:
+    - https://raw.githubusercontent.com/mir-one/TON-AppStore/main/Apps/watchtower/screenshot.png
+  thumbnail: https://raw.githubusercontent.com/mir-one/TON-AppStore/main/Apps/watchtower/thumbnail.png
