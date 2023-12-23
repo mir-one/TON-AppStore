@@ -25,6 +25,10 @@ The TON Appstore is **guaranteed to provide you the latest version of every Appl
 | #   | Application | Version | Description |
 | --- | ----------- | ------- | ----------- |
 
+| App                                                                                                                                                                                                                                                                                                                                                                                                            | Thumbnail                                   |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
+| <h2><img src=Apps/watchtower/icon.png width=21 height=21> Watchtower</h2> [![tag](https://img.shields.io/badge/containrrr/watchtower-latest-blue?style=plastic)](https://github.com/containrrr/watchtower/) [![tag](https://img.shields.io/badge/visit-project-green?style=plastic)](https://containrrr.dev/watchtower/) <br /> A container-based solution for automating Docker container base image updates. | ![thumbnail](Apps/watchtower/thumbnail.png) |
+
 ## Contributing
 
 Contributing to this Appstore is temporarily not possible at the moment. Please refrain from submitting PRs into this repository.
